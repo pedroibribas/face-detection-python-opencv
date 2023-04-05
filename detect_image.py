@@ -1,10 +1,10 @@
 import cv2 as cv
 
 # Ler imagem e deixar cinza
-image =  cv.imread('assets/sample001.jpeg')
+image =  cv.imread('assets/sample001.jpg')
 gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
 
-# Carregar haar-cascades
+# Carregar classificadores
 face_cascade = cv.CascadeClassifier('./haarcascades/haarcascade_frontalface_default.xml')
 smile_cascade = cv.CascadeClassifier('./haarcascades/haarcascade_smile.xml')
 
@@ -27,4 +27,4 @@ else:
   print(f"SUCCESS! Sorriso detectado - levelWeights = {len(levelWeights)}")
 
 # Referências
-# https://dontrepeatyourself.org/post/smile-detection-with-python-opencv-and-haar-cascade/
+# https://dontrepeatyourself.org/post/smile-detection-with-python-opencv-and-haar-cascade/9
