@@ -1,5 +1,7 @@
 import cv2 as cv
 
+print(f'{cv.__version__}')
+
 # Carregar classificadores
 face_cascade = cv.CascadeClassifier('./haarcascades/haarcascade_frontalface_default.xml')
 eye_cascade = cv.CascadeClassifier('./haarcascades/haarcascade_eye.xml')
@@ -42,7 +44,7 @@ while not cv.waitKey(1) & 0xFF == ord('q'):
     # Detectar sorriso no roi
     smiles, _rejectLevels, levelWeights = smile_cascade.detectMultiScale3(
       roi_gray,
-      scaleFactor=1.8, 
+      scaleFactor=1.8,
       minNeighbors=20,
       outputRejectLevels=True
     )
