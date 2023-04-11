@@ -25,6 +25,3 @@ if len(levelWeights) == 0:
   print(f"ERROR! Nenhum sorriso - levelWeights = {len(levelWeights)}")
 else:
   print(f"SUCCESS! Sorriso detectado - levelWeights = {len(levelWeights)}")
-
-# Referências
-# https://dontrepeatyourself.org/post/smile-detection-with-python-opencv-and-haar-cascade/9

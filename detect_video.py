@@ -1,7 +1,5 @@
 import cv2 as cv
 
-print(f'{cv.__version__}')
-
 # Carregar classificadores
 face_cascade = cv.CascadeClassifier('./haarcascades/haarcascade_frontalface_default.xml')
 eye_cascade = cv.CascadeClassifier('./haarcascades/haarcascade_eye.xml')
@@ -18,7 +16,7 @@ while not cv.waitKey(1) & 0xFF == ord('q'):
   clr_positive = (255, 0, 0)
 
   # Acessar captura frame por frame
-  _ret, frame = video_capture.read()
+  _ret, frame = video_capture.read() # 33295291
 
   # Obter frame monocromático
   frame_gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
@@ -55,7 +53,7 @@ while not cv.waitKey(1) & 0xFF == ord('q'):
 
     # Verificação do sorriso
     for (sx, sy, sw, sh) in smiles:
-      smilePredictor = 2.75
+      smilePredictor = 1.25
       if min(levelWeights) > smilePredictor:
         cv.rectangle(frame, (fx,fy), (fx+fw,fy+fh), clr_positive, 2)
         cv.putText(frame, "Sorriso detectado", (fx-5, fy), cv.FONT_HERSHEY_SIMPLEX, 0.5, clr_positive, 2)
